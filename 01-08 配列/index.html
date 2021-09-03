@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>こんにちは</h1>
+
+</body>
+<script>
+  const list = document.querySelector('.output ul');
+const totalBox = document.querySelector('.output p');
+let total = 0;
+// list.innerHTML = '';
+// totalBox.textContent = '';
+// No.1
+products =['パンツ:6.99', '靴下:5.99', 'T シャツ:14.99', 'ズボン:31.99',
+'靴:23.99']
+console.log(products);
+let itemName = [];
+let itemPrice = [];
+for (let i = 0; i < products.length; i++) { // No.2
+  // No.3
+  temp = products[i].split(':');
+  itemName.push(temp[0]);
+  itemPrice.push(Number(temp[1]));
+  total += temp[1];
+  // No.4
+  
+
+  // No.5
+  let itemText = 0;
+  itemText = temp[0] + 'ー$' + temp[1];
+  console.log(itemText) ;
+
+}
+
+// totalBox.textContent = '合計: $' + total.toFixed(2);
+</script>
+</html>
+
+
+
