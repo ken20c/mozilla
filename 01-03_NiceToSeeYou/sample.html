@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="push-me">私を押してね</button>
+
+    
+</body>
+
+<script>
+    const button = document.querySelector('.push-me');
+
+    button.onclick = function() {
+        let name = prompt('あなたの名前を教えてね');
+        switch (name){
+            case 'かほ', '華穂', '山川', '山川華穂', 'かっほ', 'carro', 'kaho', '車', 'くるま', '🚗':
+                alert(name + '大好きだよ');
+                break;
+            case '颯汰', 'そうた':
+                alert(name + 'は大学の1番の友達');
+                break;
+            default:
+            alert('こんにちは' + name + 'さん，はじめまして');
+        }
+    let myName;
+    let myAge;
+    }
+</script>
+
+</html>
