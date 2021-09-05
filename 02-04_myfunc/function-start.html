@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Function start</title>
+    <title>Function stage 4</title>
     <style>
       .msgBox {
         position: absolute;
@@ -10,15 +10,18 @@
         left: 50%;
         transform: translate(-50%,-50%);
         width: 242px;
-        background: #eee;
+        border-radius: 10px;
+        background-color: #eee;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
       }
 
       .msgBox p {
         line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
         padding-left: 82px;
         background-position: 25px center;
         background-repeat: no-repeat;
-        color: #333;
       }
 
       .msgBox button {
@@ -37,16 +40,18 @@
     <button>Display message box</button>
 
     <script>
-    const btn = document.querySelector('button');
-    btn.onclick = function() {
-        displayMessage('Woo, this is a different message!');
-    };
 
-    function displayMessage(msgText, msgType) {
+      const btn = document.querySelector('button');
+
+      btn.onclick = function() {
+        displayMessage('けんと：今日も1日お疲れ様\n大好きだよ','chat');
+      };
+
+      function displayMessage(msgText,msgType) {
         const html = document.querySelector('html');
 
         const panel = document.createElement('div');
-        panel.setAttribute('class', 'msgbox');
+        panel.setAttribute('class','msgBox');
         html.appendChild(panel);
 
         const msg = document.createElement('p');
@@ -58,18 +63,20 @@
         panel.appendChild(closeBtn);
 
         closeBtn.onclick = function() {
-            panel.parentNode.removeChild(panel);
+          panel.parentNode.removeChild(panel);
         }
-        if (msgType === 'waring')  {
-            msg.style.backgroundImage = 'url(icons/warning.png)';
-            panel.style.backgroundColor = 'red';
-        } else if (msgType === 'chat') {
-            msg.style.backgroundImage = 'url(icons/chat.png)';
-            panel.style.backgroundColor = 'aqua';
+
+        if(msgType === 'warning') {
+          msg.style.backgroundImage = 'url(icons/warning.png)';
+          panel.style.backgroundColor = 'red';
+        } else if(msgType === 'chat') {
+          msg.style.backgroundImage = 'url(icons/chat.png)';
+          panel.style.backgroundColor = 'aqua';
         } else {
-            msg.style.paddingLeft = '20px';
+          msg.style.paddingLeft = '20px';
         }
-    }
+      }
+
     </script>
   </body>
 </html>
