@@ -28,7 +28,11 @@
             const choice = select.value;
     
             if (choice === 'sunny') {
-                para.textContent = '今日はとてもいい天気です。短いパンツをはいて、砂浜や公園に出かけ、アイスクリームを食べましょう！';
+                if (temperature < 86) {
+                    para.textContent = '外の気温は ' + temperature + ' 度です — とてもいい天気です。海水浴や、公園に出かけてアイスクリームを食べましょう';
+                } else if (temperature >= 86) {
+                    para.textContent = '外の気温は ' + temperature + ' 度です — かなり暑いです！外出する場合にはアイスクリームを持って出かけましょう。';
+                }
             } else if (choice === 'rainy') {
                 para.textContent = '雨が降っています。レインコートと傘を忘れないようにして、できる限り室内で過ごしましょう。';
             } else if (choice === 'snowing') {
