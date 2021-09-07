@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガソリン価格計算</title>
+</head>
+<body>
+    <div>
+        <div>
+          <label for="start">出発: </label>
+          <input id="start-distance" type="number"><span>km </span>
+          <input id="start-gas" type="number"><span>km/L</span>
+        </div>
+        <div>
+            <label for="finish">到着: </label>
+            <input id="finish-distance" type="number"><span>km </span>
+            <input id="finish-gas" type="number"><span>km/L</span>
+          </div>
+        <div>
+           <button id="button">計算</button>
+           <button id="reset">リセット</button>
+        </div>
+    </div>
+      <p></p>
+
+    <script>
+        let para = document.querySelector('p');
+        let button = document.getElementById('button');
+        let reset = document.getElementById('reset');
+
+        button.onclick = function(){
+            let sDistance = document.getElementById('start-distance').value;
+            let fDistance = document.getElementById('finish-distance').value;
+            let sGas = document.getElementById('start-gas').value;
+            let fGas = document.getElementById('finish-gas').value;
+        
+
+            let l = Number(fDistance)/Number(fGas) - Number(sDistance)/Number(sGas);
+            const gasPrice = 145;
+            let cost = l * gasPrice;
+            para.textContent = "今回のガソリン代は" + Math.round(cost) + "円です。";
+            return cost;
+        }
+
+        reset.onclick = function() {
+            para.textContent = ""
+        }
+    </script>
+</body>
+</html>
